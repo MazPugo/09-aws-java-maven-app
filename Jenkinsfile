@@ -53,3 +53,13 @@ pipeline {
             }
         }
     }
+
+    post {
+        failure {
+            echo 'Pipeline failed — check the stage logs above.'
+        }
+        always {
+            cleanWs()
+        }
+    }
+}
